@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Password Manager</title>
+
+    <link rel="icon" href="/static/favicon.ico">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style_generate.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="script_generate.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+      <header>
+      <a href="#" style="text-decoration:none;color:rgb(8, 9, 9); "><i class="fa-solid fa-fingerprint fa-beat fa-2xl logo" style="color: #1d0e0e;"></i> <span style="font-size: 20px;padding-left:2%;">   Pixel Vault</span></a>
+      <ul >
+        <li><a href="/" style="color:aliceblue">Home</a></li>
+        <li><a href="/" style="color:aliceblue">Our Services</a></li>
+        <li><a href="/" style="color:aliceblue">Contact</a></li>
+        <li><a href="/login" style="color:aliceblue">Log In</a></li>
+      </ul>
+    </header>
+    <div class="TBox">
+      <p style="color:rgb(13, 15, 14);font-size:xx-large;font-weight: bolder;">Hard Remembering the Password? Log In to Securely Store it Now!</p>
+    </div>
+    <div class="wrapper">
+      <div class="password-box">
+        <input type="text" disabled />
+        <i class="uil uil-copy copy-icon"></i>
+      </div>
+
+      <div class="range-box">
+        <input type="range" min="6" max="40" value="8" />
+        <span class="slider-number">8</span>
+      </div>
+
+      <button class="generate-button" >Generate Password</button>
+    </div>
+    
+    <script>
+      const passwordInput = document.querySelector(".password-box input"),
+  copyIcon = document.querySelector(".password-box .copy-icon"),
+  rangeInput = document.querySelector(".range-box input"),
+  sliderNumber = document.querySelector(".range-box .slider-number"),
+  generateButton = document.querySelector(".generate-button");
+
+
+let allCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^!$%&|[](){}:;.,*+-#@<>~";
+
+//this function will be called on, page reload, generateButton clicked & rangeInput slide
+const generatePassword = () => {
+  let newPassword = "";
+
+  //for loop will run till rangeInput value
+  for (let i = 0; i < rangeInput.value; i++) {
+    let randomNumbers = Math.floor(Math.random() * allCharacters.length);
+    newPassword += allCharacters[randomNumbers];
+  }
+  passwordInput.value = newPassword;
+  copyIcon.classList.replace("uil-file-check-alt", "uil-copy"); //replace icon
+};
+
+rangeInput.addEventListener("input", () => {
+  sliderNumber.innerText = rangeInput.value;
+  generatePassword();
+});
+
+//copy passInput's value on copyIcon click
+//copy passInput's value on copyIcon click
+copyIcon.addEventListener("click", () => {
+  navigator.clipboard.writeText(passwordInput.value);
+  copyIcon.classList.replace("uil-copy", "uil-file-check-alt"); //replace icon
+});
+
+generatePassword();
+generateButton.addEventListener("click", generatePassword);
+    </script>
+  </body>
+</html>
+

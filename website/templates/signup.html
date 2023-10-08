@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- Head -->
+
+<head>
+    <title>Pixel Vault</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Key Login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="/static/login/css/style.css" type="text/css" media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+    <link rel="stylesheet" href="/static/login/css/font-awesome.min.css" type="text/css" media="all">
+    <!-- //Font-Awesome-File-Links -->
+	 <!-- //Font-Awesome-File-Links -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Google fonts -->
+	<!-- Google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+	<!-- Google fonts -->
+
+</head>
+<!-- //Head -->
+<!-- Body -->
+
+<body>
+
+<section class="main">
+	<div class="layer">
+		
+		<div class="bottom-grid">
+			<div class="logo">
+				<h1> <a href=""><span class="fa-solid fa-fingerprint" style="padding-right:5%;"></span>  Pixel Vault</a></h1>
+			</div>
+			<div class="links">
+				<ul class="links-unordered-list">
+					<li class="active">
+						<a href="/login" class="">Login</a>
+					</li>
+					<li class="active">
+						<a href="#" class="">About Us</a>
+					</li>
+					<li class="active">
+						<a href="#" class="">Register</a>
+					</li>
+					<li class="active">
+						<a href="#" class="">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content-w3ls" style="background: rgba( 70, 45, 45, 0.25 );
+		box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+		backdrop-filter: blur( 5.5px );
+		-webkit-backdrop-filter: blur( 5.5px );
+		border-radius: 10px;
+		border: 1px solid rgba( 255, 255, 255, 0.18 );margin-top:0%;">
+			<div class="text-center icon " style="margin-top: -10%;padding-top: -5%;">
+				<span class="fa-solid fa-fingerprint fa-beat fa-2xl"></span>
+                <br>
+                <h1 style="padding-top: 4%;font-size:40px;">Sign Up</h1>
+			</div>
+			<div class="content-bottom">
+				<form action="/signup" method="post">
+					{% csrf_token %}
+
+					<div class="field-group">
+						<span class="fa fa-user" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<input name="fname" id="text1" type="text" value="" placeholder="First Name" required>
+						</div>
+					</div>
+					<div class="field-group">
+						<span class="fa fa-user" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<input name="lname" id="text1" type="text" value="" placeholder="Last Name" required>
+						</div>
+					</div>
+					<div class="field-group">
+						<span class="fa fa-user" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<input name="username" id="text1" type="text" value="" placeholder="Username" required>
+						</div>
+					</div>
+					<div class="field-group">
+						<span class="fa fa-lock" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<input name="password" id="myInput" type="Password" placeholder="Password">
+						</div>
+					</div>
+					<div class="wthree-field">
+						<button type="submit" class="btn">Get Started</button>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+    </div>
+</section>
+
+</body>
+<!-- //Body -->
+</html>
